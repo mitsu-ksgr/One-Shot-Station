@@ -47,444 +47,85 @@ typedef struct {
 } command;
 
 static const command step[] = {
-	// メトロ車内にいて、Xボタンでマップを開いたときにバツチー郡駅にカーソルが合っている状態からスタートさせる。
+	// メトロ車内にいて、Xボタンでマップを開いたときにバツチー郡駅にカーソルが
+	// 合っている状態からスタートさせる。
 	// コントローラ接続
-  	{ NOTHING,  250 },
-  	{ TRIGGERS,  20 },
-  	{ NOTHING,  150 },
-  	{ TRIGGERS,  20 },
-  	{ NOTHING,  150 },
-  	{ A,         20 },
-  	{ NOTHING,  250 },
+	{ NOTHING,  250 },
+	{ TRIGGERS,  20 },
+	{ NOTHING,  150 },
+	{ TRIGGERS,  20 },
+	{ NOTHING,  150 },
+	{ A,         20 },
+	{ NOTHING,  250 },
 
-  	// バツチー郡駅クリアループを25回。もっと綺麗にfor文とかで書きたいんですけどやり方が分かりませんでした助けて
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	// 少しだけ左に視点をずらす。これは往復してきた風船を狙うため。往復なしでもクリア可能だが、タイミングがシビアすぎてプログラミングでは対応不可能。
-  	// スティックを右に入力するか左に入力するかは、ノーマルカメラかリバースカメラかによって変更する
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
+	// バツチー郡駅クリアループを25回。
+	// もっと綺麗にfor文とかで書きたいんですけどやり方が分かりませんでした助けて
+	{ X,         20 },
+	{ NOTHING,   10 },
+	{ A,         10 },
+	{ NOTHING,   10 },
+	{ A,         20 },
+	{ NOTHING,  360 },
+	{ A,         20 },
+	{ NOTHING,   30 },
+	{ UP,        80 },
+	{ A,         20 },
+	{ NOTHING,  180 },
+	// 少しだけ左に視点をずらす。これは往復してきた風船を狙うため。往復なしでもクリア可能だが、タイミングがシビアすぎてプログラミングでは対応不可能。
+	{ R_LEFT,   0.8 },
+	{ ZR,       177 },
+	{ NOTHING,  640 },
 
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	{ A,         10 },
-  	{ NOTHING,   10 },
-  	{ A,         20 },
-  	{ NOTHING,  360 },
-  	{ A,         20 },
-  	{ NOTHING,   30 },
-  	{ UP,        80 },
-  	{ A,         20 },
-  	{ NOTHING,  180 },
-  	{ R_RIGHT,  0.8 },
-  	{ ZR,       177 },
-  	{ NOTHING,  640 },
-
-  	// バツチー郡駅から自販機まで移動
-  	// マップを開く
-  	{ X,         20 },
-  	{ NOTHING,   10 },
-  	// 中央駅までカーソル移動
-  	{ LEFT,       5 },
-  	{ NOTHING,   10 },
-  	{ DOWN,       5 },
-  	{ NOTHING,   10 },
-  	{ DOWN,       5 },
-  	{ NOTHING,   10 },
-  	{ RIGHT,      5 },
-  	{ NOTHING,   10 },
-  	{ RIGHT,      5 },
-  	{ NOTHING,   10 },
-  	{ DOWN,       5 },
-  	{ NOTHING,   10 },
-  	// 中央駅選択
-  	{ A,          5 },
-  	{ NOTHING,   10 },
-  	{ A,          5 },
-  	// ロード
-  	{ NOTHING,  250 },
-  	// 前進
-  	{ UP,        80 },
-  	{ NOTHING,   20 },
-  	// 右を向く
-  	{ RIGHT,     10 },
-  	{ Y,          5 },
-  	{ NOTHING,   20 },
-  	// ロッカーにぶつかるまで前進
-  	{ UP,       400 },
-  	// 左を向く
-  	{ LEFT,      10 },
-  	{ Y,          5 },
-  	{ NOTHING,   20 },
-  	// 段ボールにぶつかるまで前進
-  	{ UP,        30 },
+	// バツチー郡駅から自販機まで移動
+	// マップを開く
+	{ X,         20 },
+	{ NOTHING,   10 },
+	// 中央駅までカーソル移動
+	{ LEFT,       5 },
+	{ NOTHING,   10 },
+	{ DOWN,       5 },
+	{ NOTHING,   10 },
+	{ DOWN,       5 },
+	{ NOTHING,   10 },
+	{ RIGHT,      5 },
+	{ NOTHING,   10 },
+	{ RIGHT,      5 },
+	{ NOTHING,   10 },
+	{ DOWN,       5 },
+	{ NOTHING,   10 },
+	// 中央駅選択
+	{ A,          5 },
+	{ NOTHING,   10 },
+	{ A,          5 },
+	// ロード
+	{ NOTHING,  250 },
+	// 前進
+	{ UP,        80 },
+	{ NOTHING,   20 },
+	// 右を向く
+	{ RIGHT,     10 },
+	{ Y,          5 },
+	{ NOTHING,   20 },
+	// ロッカーにぶつかるまで前進
+	{ UP,       400 },
+	// 左を向く
+	{ LEFT,      10 },
+	{ Y,          5 },
+	{ NOTHING,   20 },
+	// 段ボールにぶつかるまで前進
+	{ UP,        30 },
 	// 自販機の方を向く
-  	{ RIGHT,     10 },
+	{ RIGHT,     10 },
 
-  	// ポイント交換
-  	{ A,          5 },
-  	{ NOTHING,   10 },
-  	{ RIGHT,      5 },
-  	{ NOTHING,   10 },
-  	{ A,          5 },
-  	{ NOTHING,  150 },
-  	{ A,          5 },
-  	{ NOTHING,   20 },
+	// ポイント交換
+	{ A,          5 },
+	{ NOTHING,   10 },
+	{ RIGHT,      5 },
+	{ NOTHING,   10 },
+	{ A,          5 },
+	{ NOTHING,  150 },
+	{ A,          5 },
+	{ NOTHING,   20 },
 
 	// 中央駅からバツチー郡駅に移動
 	{ PLUS,       5 },
@@ -652,6 +293,44 @@ int bufindex = 0;
 int duration_count = 0;
 int portsval = 0;
 
+void ReflectStepButton(
+		const Buttons_t button,
+		USB_JoystickReport_Input_t* const ReportData
+		) {
+	switch (button)
+	{
+		case UP:        ReportData->LY = STICK_MIN; break;
+		case LEFT:      ReportData->LX = STICK_MIN; break;
+		case DOWN:      ReportData->LY = STICK_MAX; break;
+		case RIGHT:     ReportData->LX = STICK_MAX; break;
+		case R_UP:      ReportData->RY = STICK_MIN; break;
+		case R_LEFT:    ReportData->RX = STICK_MIN; break;
+		case R_DOWN:    ReportData->RY = STICK_MAX; break;
+		case R_RIGHT:   ReportData->RX = STICK_MAX; break;
+
+		case A:     ReportData->Button |= SWITCH_A;     break;
+		case B:     ReportData->Button |= SWITCH_B;     break;
+		case X:     ReportData->Button |= SWITCH_X;     break;
+		case Y:     ReportData->Button |= SWITCH_Y;     break;
+		case R:     ReportData->Button |= SWITCH_R;     break;
+		case ZR:    ReportData->Button |= SWITCH_ZR;    break;
+		case PLUS:  ReportData->Button |= SWITCH_PLUS;  break;
+
+		case TRIGGERS:
+			ReportData->Button |= SWITCH_L | SWITCH_R;
+			break;
+
+		default:
+			ReportData->LX = STICK_CENTER;
+			ReportData->LY = STICK_CENTER;
+			ReportData->RX = STICK_CENTER;
+			ReportData->RY = STICK_CENTER;
+			ReportData->HAT = HAT_CENTER;
+			break;
+	}
+}
+
+
 // Prepare the next report for the host.
 void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 
@@ -680,43 +359,39 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			break;
 
 		// case SYNC_CONTROLLER:
-		// 	if (report_count > 550)
-		// 	{
-		// 		report_count = 0;
-		// 		state = SYNC_POSITION;
-		// 	}
-		// 	else if (report_count == 250 || report_count == 300 || report_count == 325)
-		// 	{
-		// 		ReportData->Button |= SWITCH_L | SWITCH_R;
-		// 	}
-		// 	else if (report_count == 350 || report_count == 375 || report_count == 400)
-		// 	{
-		// 		ReportData->Button |= SWITCH_A;
-		// 	}
-		// 	else
-		// 	{
-		// 		ReportData->Button = 0;
-		// 		ReportData->LX = STICK_CENTER;
-		// 		ReportData->LY = STICK_CENTER;
-		// 		ReportData->RX = STICK_CENTER;
-		// 		ReportData->RY = STICK_CENTER;
-		// 		ReportData->HAT = HAT_CENTER;
-		// 	}
-		// 	report_count++;
-		// 	break;
+		//	if (report_count > 550)
+		//	{
+		//		report_count = 0;
+		//		state = SYNC_POSITION;
+		//	}
+		//	else if (report_count == 250 || report_count == 300 || report_count == 325)
+		//	{
+		//		ReportData->Button |= SWITCH_L | SWITCH_R;
+		//	}
+		//	else if (report_count == 350 || report_count == 375 || report_count == 400)
+		//	{
+		//		ReportData->Button |= SWITCH_A;
+		//	}
+		//	else
+		//	{
+		//		ReportData->Button = 0;
+		//		ReportData->LX = STICK_CENTER;
+		//		ReportData->LY = STICK_CENTER;
+		//		ReportData->RX = STICK_CENTER;
+		//		ReportData->RY = STICK_CENTER;
+		//		ReportData->HAT = HAT_CENTER;
+		//	}
+		//	report_count++;
+		//	break;
 
 		case SYNC_POSITION:
 			bufindex = 0;
-
-
 			ReportData->Button = 0;
 			ReportData->LX = STICK_CENTER;
 			ReportData->LY = STICK_CENTER;
 			ReportData->RX = STICK_CENTER;
 			ReportData->RY = STICK_CENTER;
 			ReportData->HAT = HAT_CENTER;
-
-
 			state = BREATHE;
 			break;
 
@@ -725,114 +400,26 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			break;
 
 		case PROCESS:
-
-			switch (step[bufindex].button)
-			{
-
-				case UP:
-					ReportData->LY = STICK_MIN;
-					break;
-
-				case LEFT:
-					ReportData->LX = STICK_MIN;
-					break;
-
-				case DOWN:
-					ReportData->LY = STICK_MAX;
-					break;
-
-				case RIGHT:
-					ReportData->LX = STICK_MAX;
-					break;
-
-				case R_UP:
-					ReportData->RY = STICK_MIN;
-					break;
-
-				case R_LEFT:
-					ReportData->RX = STICK_MIN;
-					break;
-
-				case R_DOWN:
-					ReportData->RY = STICK_MAX;
-					break;
-
-				case R_RIGHT:
-					ReportData->RX = STICK_MAX;
-					break;
-
-				case A:
-					ReportData->Button |= SWITCH_A;
-					break;
-
-				case B:
-					ReportData->Button |= SWITCH_B;
-					break;
-
-				case X:
-					ReportData->Button |= SWITCH_X;
-					break;
-
-				case Y:
-					ReportData->Button |= SWITCH_Y;
-					break;
-
-				case R:
-					ReportData->Button |= SWITCH_R;
-					break;
-
-				case ZR:
-					ReportData->Button |= SWITCH_ZR;
-					break;
-
-				case PLUS:
-					ReportData->Button |= SWITCH_PLUS;
-					break;
-
-				case TRIGGERS:
-					ReportData->Button |= SWITCH_L | SWITCH_R;
-					break;
-
-				default:
-					ReportData->LX = STICK_CENTER;
-					ReportData->LY = STICK_CENTER;
-					ReportData->RX = STICK_CENTER;
-					ReportData->RY = STICK_CENTER;
-					ReportData->HAT = HAT_CENTER;
-					break;
-			}
+			ReflectStepButton(step[bufindex].button, ReportData);
 
 			duration_count++;
-
 			if (duration_count > step[bufindex].duration)
 			{
 				bufindex++;
 				duration_count = 0;
 			}
 
-
 			if (bufindex > (int)( sizeof(step) / sizeof(step[0])) - 1)
 			{
-
-				// state = CLEANUP;
-
 				bufindex = 7;
 				duration_count = 0;
-
 				state = BREATHE;
-
 				ReportData->LX = STICK_CENTER;
 				ReportData->LY = STICK_CENTER;
 				ReportData->RX = STICK_CENTER;
 				ReportData->RY = STICK_CENTER;
 				ReportData->HAT = HAT_CENTER;
-
-
-				// state = DONE;
-//				state = BREATHE;
-
 			}
-
 			break;
 
 		case CLEANUP:
@@ -851,8 +438,8 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 
 	// // Inking
 	// if (state != SYNC_CONTROLLER && state != SYNC_POSITION)
-	// 	if (pgm_read_byte(&(image_data[(xpos / 8) + (ypos * 40)])) & 1 << (xpos % 8))
-	// 		ReportData->Button |= SWITCH_A;
+	//	if (pgm_read_byte(&(image_data[(xpos / 8) + (ypos * 40)])) & 1 << (xpos % 8))
+	//		ReportData->Button |= SWITCH_A;
 
 	// Prepare to echo this report
 	memcpy(&last_report, ReportData, sizeof(USB_JoystickReport_Input_t));
