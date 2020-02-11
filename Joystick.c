@@ -44,7 +44,7 @@ typedef enum {
 typedef struct {
 	Buttons_t button;
 	uint16_t duration;
-} command; 
+} command;
 
 static const command step[] = {
 	// メトロ車内にいて、Xボタンでマップを開いたときにバツチー郡駅にカーソルが合っている状態からスタートさせる。
@@ -56,9 +56,9 @@ static const command step[] = {
   	{ NOTHING,  150 },
   	{ A,         20 },
   	{ NOTHING,  250 },
-  
+
   	// バツチー郡駅クリアループを25回。もっと綺麗にfor文とかで書きたいんですけどやり方が分かりませんでした助けて
-  	{ X,         20 }, 
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -74,8 +74,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  	
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -89,8 +89,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  	
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -104,8 +104,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -119,8 +119,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -134,8 +134,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -149,8 +149,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -164,8 +164,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -179,8 +179,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -194,8 +194,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -209,8 +209,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -224,8 +224,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -239,8 +239,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -254,8 +254,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -269,8 +269,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  	
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -284,8 +284,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -299,8 +299,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -314,8 +314,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -329,8 +329,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -344,8 +344,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -359,8 +359,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -374,8 +374,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -389,8 +389,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -404,8 +404,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -419,8 +419,8 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  
-  	{ X,         20 }, 
+
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	{ A,         10 },
   	{ NOTHING,   10 },
@@ -434,23 +434,23 @@ static const command step[] = {
   	{ R_RIGHT,  0.8 },
   	{ ZR,       177 },
   	{ NOTHING,  640 },
-  	
+
   	// バツチー郡駅から自販機まで移動
   	// マップを開く
-  	{ X,         20 }, 
+  	{ X,         20 },
   	{ NOTHING,   10 },
   	// 中央駅までカーソル移動
-  	{ LEFT,       5 }, 
+  	{ LEFT,       5 },
   	{ NOTHING,   10 },
-  	{ DOWN,       5 }, 
+  	{ DOWN,       5 },
   	{ NOTHING,   10 },
-  	{ DOWN,       5 }, 
+  	{ DOWN,       5 },
   	{ NOTHING,   10 },
-  	{ RIGHT,      5 }, 
+  	{ RIGHT,      5 },
   	{ NOTHING,   10 },
-  	{ RIGHT,      5 }, 
+  	{ RIGHT,      5 },
   	{ NOTHING,   10 },
-  	{ DOWN,       5 }, 
+  	{ DOWN,       5 },
   	{ NOTHING,   10 },
   	// 中央駅選択
   	{ A,          5 },
@@ -475,7 +475,7 @@ static const command step[] = {
   	{ UP,        30 },
 	// 自販機の方を向く
   	{ RIGHT,     10 },
-  	
+
   	// ポイント交換
   	{ A,          5 },
   	{ NOTHING,   10 },
@@ -485,7 +485,7 @@ static const command step[] = {
   	{ NOTHING,  150 },
   	{ A,          5 },
   	{ NOTHING,   20 },
-	
+
 	// 中央駅からバツチー郡駅に移動
 	{ PLUS,       5 },
 	{ NOTHING,   15 },
@@ -730,35 +730,35 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			{
 
 				case UP:
-					ReportData->LY = STICK_MIN;				
+					ReportData->LY = STICK_MIN;
 					break;
 
 				case LEFT:
-					ReportData->LX = STICK_MIN;				
+					ReportData->LX = STICK_MIN;
 					break;
 
 				case DOWN:
-					ReportData->LY = STICK_MAX;				
+					ReportData->LY = STICK_MAX;
 					break;
 
 				case RIGHT:
-					ReportData->LX = STICK_MAX;				
+					ReportData->LX = STICK_MAX;
 					break;
 
 				case R_UP:
-					ReportData->RY = STICK_MIN;				
+					ReportData->RY = STICK_MIN;
 					break;
 
 				case R_LEFT:
-					ReportData->RX = STICK_MIN;				
+					ReportData->RX = STICK_MIN;
 					break;
 
 				case R_DOWN:
-					ReportData->RY = STICK_MAX;				
+					ReportData->RY = STICK_MAX;
 					break;
 
 				case R_RIGHT:
-					ReportData->RX = STICK_MAX;				
+					ReportData->RX = STICK_MAX;
 					break;
 
 				case A:
@@ -807,7 +807,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			if (duration_count > step[bufindex].duration)
 			{
 				bufindex++;
-				duration_count = 0;				
+				duration_count = 0;
 			}
 
 
